@@ -1,0 +1,33 @@
+name: dockercompose14247881008327655356
+services:
+  courseapi:
+    build:
+      context: C:\Users\mqnw1\source\repos\StudentsAPI
+      dockerfile: CourseAPI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+    image: courseapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+  studentsapi:
+    build:
+      context: C:\Users\mqnw1\source\repos\StudentsAPI
+      dockerfile: StudentsAPI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+    image: studentsapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+networks:
+  default:
+    name: dockercompose14247881008327655356_default
