@@ -27,6 +27,14 @@ services:
         - courseapi
         - studentsapi
 
+  webapp:
+    image: ${DOCKER_REGISTRY-}webapp
+    build:
+      context: .
+      dockerfile: WebApp/Dockerfile
+    depends_on:
+        - sqldata
+
   sqldata:
      image: mcr.microsoft.com/mssql/server:2019-latest 
 
