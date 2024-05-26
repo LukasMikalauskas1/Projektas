@@ -1,4 +1,17 @@
+using Serilog;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Configure Serilog
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.Elasticsearch(new Serilog.Sinks.Elasticsearch.ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+    {
+        AutoRegisterTemplate = true,
+    })
+    .CreateLogger();
+
+builder.Host.UseSerilog(); // Add this line to use Serilog
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -25,3 +38,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+// Ensure to flush and close loggers
+Log.CloseAndFlush();

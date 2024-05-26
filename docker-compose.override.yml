@@ -5,6 +5,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
+      - SERILOG_ELASTICSEARCH_URL=http://logstash:5000
       - ConnectionStrings__CourseApiContext=Server=sqldata;Database=CoursesDB;User Id=sa;Password=My!P@ssw0rd1; Encrypt=false;
     ports:
       - "5082:8080"
@@ -13,6 +14,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
+      - SERILOG_ELASTICSEARCH_URL=http://logstash:5000
       - ConnectionStrings__StudentsAPIContext=Server=sqldata;Database=StudentDB;User Id=sa;Password=My!P@ssw0rd1; Encrypt=false;
     ports:
       - "5081:8080"
@@ -21,9 +23,18 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
+      - SERILOG_ELASTICSEARCH_URL=http://logstash:5000
       - ConnectionStrings__StudentsAPIContext=Server=sqldata;Database=WebApp;User Id=sa;Password=My!P@ssw0rd1; Encrypt=false;
     ports:
       - "5083:8080"
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.10.0
+    container_name: logstash
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
 
   sqldata:
      environment:

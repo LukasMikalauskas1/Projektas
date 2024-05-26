@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mqnw1\\source\\repos\\StudentsAPI\\CourseAPI\\CourseAPI.csproj": {}
+    "/home/lukas/workspace/PPDK/Projektas/CourseAPI/CourseAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mqnw1\\source\\repos\\StudentsAPI\\CourseAPI\\CourseAPI.csproj": {
+    "/home/lukas/workspace/PPDK/Projektas/CourseAPI/CourseAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mqnw1\\source\\repos\\StudentsAPI\\CourseAPI\\CourseAPI.csproj",
+        "projectUniqueName": "/home/lukas/workspace/PPDK/Projektas/CourseAPI/CourseAPI.csproj",
         "projectName": "CourseAPI",
-        "projectPath": "C:\\Users\\mqnw1\\source\\repos\\StudentsAPI\\CourseAPI\\CourseAPI.csproj",
-        "packagesPath": "C:\\Users\\mqnw1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mqnw1\\source\\repos\\StudentsAPI\\CourseAPI\\obj\\",
+        "projectPath": "/home/lukas/workspace/PPDK/Projektas/CourseAPI/CourseAPI.csproj",
+        "packagesPath": "/home/lukas/.nuget/packages/",
+        "outputPath": "/home/lukas/workspace/PPDK/Projektas/CourseAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mqnw1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/lukas/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,6 +61,18 @@
               "target": "Package",
               "version": "[8.0.2, )"
             },
+            "Serilog": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Serilog.Sinks.Elasticsearch": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -87,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/245/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
